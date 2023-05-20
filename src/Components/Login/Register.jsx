@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../Providers/Authproviders";
+import { useForm } from 'react-hook-form';
 
 const Register = () => {
   const { createUser } = useContext(authContext);
@@ -29,14 +30,14 @@ const Register = () => {
   };
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero min-h-screen bg-indigo-200 ">
+        <div className="hero-content flex-col lg:flex-row-reverse py-48">
           <div className="text-center lg:text-left"></div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <h1 className="text-2xl font-bold text-center mt-2">
+          <div className="card h-auto  w-full  max-w-sm shadow-2xl  bg-red-300">
+            <h1 className="text-2xl font-bold text-center mt-2 ">
               Register now
             </h1>
-            <div className="card-body">
+            <div className="card-body ">
               <form onSubmit={handleRegister}>
                 <div className="form-control">
                   <label className="label">
@@ -92,18 +93,19 @@ const Register = () => {
                     <h6 className="text-purple-500">{error}</h6>
                   </div>
                   <label className="label">
-                    All ready have and account
-                    <Link className="text-purple-500" to="/login">
+                    All ready have and account  
+                     <Link className="text-purple-500" to="/login">
                       Login
                     </Link>
                   </label>
                 </div>
-                <div className="form-control mt-6">
+                <div className="form-control mt-2">
                   <button className="btn btn-primary">Login</button>
                 </div>
               </form>
             </div>
           </div>
+          <img className="rounded-2xl" src="https://st.depositphotos.com/18722762/51522/v/450/depositphotos_515228796-stock-illustration-online-registration-sign-login-account.jpg" alt="" />
         </div>
       </div>
     </>
