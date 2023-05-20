@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../Providers/Authproviders";
+import "./Login.css";
 
 const Login = () => {
-  const { login } = useContext(authContext);
+  const { login,googleLogin } = useContext(authContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [user, setUser] = useState("");
@@ -27,9 +28,23 @@ const Login = () => {
         setError(error.message);
       });
   };
+  const handleGoogleLogin = () => {
+    setError("");
+    setSuccess("");
+    googleLogin()
+      .then((result) => {
+        const logedUser = result.user;
+        setSuccess("successfully login");
+        navigate(from, { replace: true });
+        console.log(user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return (
     <>
-      <div className="hero min-h-screen bg-base-200 bg-indigo-200">
+      <div className="hero min-h-screen  bg-indigo-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-red-300">
@@ -76,8 +91,19 @@ const Login = () => {
                   <button className="btn btn-primary">Login</button>
                 </div>
               </form>
+              <div className=" social-button-container w-50 mt-3 ">
+                <div className="flex justify-center">
+                  <img
+                    onClick={handleGoogleLogin}
+                    className=" social-button"
+                    src="https://i.ibb.co/gSTHXZJ/google-btn.png"
+                    alt=""
+                  />
+                </div>
+              </div>
             </div>
           </div>
+          {/* <img className="w-96" src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=2000" alt="" /> */}
         </div>
       </div>
     </>

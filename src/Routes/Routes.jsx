@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
-import Register from "../Components/Login/Register";
+import Register from "../Components/Register/Register";
 import Addtoy from "../Components/Toy/Addtoy";
 import Error from "../Components/Error/Error";
 import Mytoys from "../Components/Mytoys/Mytoys";

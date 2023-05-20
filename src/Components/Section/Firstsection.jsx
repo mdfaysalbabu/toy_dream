@@ -14,14 +14,16 @@ const Firstsection = () => {
             className="input input-ghost w-full max-w-xs shadow-xl"
           />
           <h3 className="text-purple-400 text-xl mb-2">Email</h3>
-          <input 
+          <input
             type="text"
             placeholder="Type here"
             className="input input-ghost w-full max-w-xs shadow-xl"
           />
-          <h3>Verification</h3>
-          <input type="checkbox" name="" id="" />
-          <p>I am not robot</p>
+          <h3 className="text-start text-white mt-3">Verification</h3>
+          <div className="flex gap-3">
+            <input type="checkbox" name="" id="" />
+            <p className="text-white">I am not robot</p>
+          </div>
         </div>
         <div>
           <h4 className="text-4xl mb-2 text-orange-400">Message</h4>
@@ -31,7 +33,7 @@ const Firstsection = () => {
             placeholder="Type here"
             className="textarea textarea-bordered textarea-lg w-full max-w-xs shadow-xl"
           ></textarea>
-          <button className="">Send Message</button>
+          <button className="btn btn-accent">Send Message</button>
         </div>
       </div>
     </div>
