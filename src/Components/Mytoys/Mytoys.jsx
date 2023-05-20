@@ -33,7 +33,7 @@ const Mytoys = () => {
             {/* head */}
             <thead>
               <tr>
-                <th className="font-serif">CarsToy</th>
+                <th className="font-semibold">CarsToy</th>
                 <th>Photo</th>
                 <th>Category</th>
                 <th>Price</th>

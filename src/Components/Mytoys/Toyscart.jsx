@@ -55,9 +55,9 @@ const Toyscart = ({ cars, handleDelete }) => {
         <td className="font-semibold font-serif">$: {quantity}</td>
         <th className=" cursor-pointer">
           {/* <label htmlFor="my-modal-5" className="btn">open modal</label> */}
-          <Link to={`/updateInvention/${_id}`}>
+          {/* <Link to={`/updateInvention/${_id}`}>
             <img src={update} alt="" srcset="" width={"30px"} height={"30px"} />
-          </Link>
+          </Link> */}
         </th>
         {/* <th>
           Delete  
