@@ -1,13 +1,19 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../Providers/Authproviders";
 import "./Login.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
   const { login,googleLogin } = useContext(authContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [user, setUser] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleLogin = (event) => {
     event.preventDefault();
     setSuccess("");
@@ -22,7 +28,9 @@ const Login = () => {
         const loagedUser = result.user;
         setSuccess("successfully login");
         form.reset();
+        navigate(from, { replace: true });
         console.log(loagedUser);
+        toast.success('favorite recipe!');
       })
       .catch((error) => {
         setError(error.message);
@@ -101,6 +109,7 @@ const Login = () => {
                   />
                 </div>
               </div>
+              <ToastContainer></ToastContainer>
             </div>
           </div>
           {/* <img className="w-96" src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=2000" alt="" /> */}

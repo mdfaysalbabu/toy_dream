@@ -1,25 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import cartoys from "../../assets/cartoys.json";
+
 
 const Banner = () => {
   return (
-    <div className="mb-5">
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: `url("/images/stock/photo-1507358522600-9f71e620c44e.jpg")`,
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+    <div className="bg-slate-300">
+      <div className="my-container lg:flex  items-center justify-between lg:flex-row">
+        {/* Text Content */}
+        <div className="mb-10 lg:max-w-lg mx-auto lg:pr-5 lg:mb-0">
+          <div className="max-w-xl mb-6 lg:mt-8">
+            <div>
+              <p className="badge bg-red-500">On Sale</p>
+            </div>
+            <h2 className="text-6xl font-bold">
+              Best Toy Car Have Our Dream Toy Car
+            </h2>
+            <p className="mt-2">
+              There are many variations of passages of available, but the
+              majority have suffered alteration in some form
             </p>
-            <button className="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+        {/* Lottie Animation */}
+        <div className=" lg:w-1/2 ">
+          <div className=" w-3/5 lg:ml-auto h-56  sm:h-96">
+            <Lottie animationData={cartoys} loop={true} />
           </div>
         </div>
       </div>

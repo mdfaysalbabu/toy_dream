@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "../../Providers/Authproviders";
 
 const Header = () => {
+  const { user, logout } = useContext(authContext);
+  const handleLogOut = () => {
+    logout()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <>
       <div className="navbar bg-purple-400 ">
@@ -37,7 +46,9 @@ const Header = () => {
                 <a>My Toys</a>
               </li>
               <li>
-                <Link to='addtoy'><a>Add A Toy</a></Link>
+                <Link to="addtoy">
+                  <a>Add A Toy</a>
+                </Link>
               </li>
               <li>
                 <a>Blogs</a>
@@ -50,24 +61,55 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to='/'><a>Home</a></Link>
+              <Link to="/">
+                <a>Home</a>
+              </Link>
             </li>
             <li tabIndex={0}>
-              <Link to='mytoys'><li>My Toys</li></Link>
+              <Link to="mytoys">
+                <li>My Toys</li>
+              </Link>
             </li>
             <li>
-              <Link to='alltoys'><a>All Toys</a></Link>
+              <Link to="alltoys">
+                <a>All Toys</a>
+              </Link>
             </li>
             <li>
-            <Link to='addtoy'><a>Add A Toy</a></Link>
+              <Link to="addtoy">
+                <a>Add A Toy</a>
+              </Link>
             </li>
             <li>
-              <Link to='blog'><a>Blogs</a></Link>
+              <Link to="blog">
+                <a>Blogs</a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to='/login'><a className="btn">Login</a></Link>
+          {user ? (
+            <>
+              <span>
+                <img
+                  className=" rounded mt-2 mr-3"
+                  style={{ width: "30px" }}
+                  src={user?.photoURL}
+                  alt=""
+                  title={user.displayName}
+                />
+              </span>
+              <button className="btn btn-success" onClick={handleLogOut}>
+                Signout
+              </button>
+            </>
+          ) : (
+            
+             <Link to="/login"
+            >
+              <button className="btn btn-accent">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </>

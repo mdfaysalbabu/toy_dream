@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { authContext } from "../Providers/Authproviders";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Addtoy = () => {
   const { user } = useContext(authContext);
@@ -8,6 +10,7 @@ const Addtoy = () => {
     register,
     handleSubmit,
     formState: { errors },
+    
   } = useForm();
   const onSubmit = (data) => {
     fetch("http://localhost:5000/carsAll", {
@@ -19,6 +22,7 @@ const Addtoy = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+      
   };
   return (
     <div className="bg bg-gray-300">
@@ -84,6 +88,7 @@ const Addtoy = () => {
             {...register("quantity", { required: true })}
             className="h-[50px] px-5 rounded-xl bg-red-300 text-violet-700 text-2xl shadow-xl"
           />
+          <ToastContainer></ToastContainer>
         </div>
 
         {/* include validation with required or other standard HTML validation rules */}
