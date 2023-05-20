@@ -25,10 +25,11 @@ const Addtoy = () => {
       
   };
   return (
-    <div className="bg bg-gray-300">
+    <div className="bg bg-gray-300 ">
+      <h2 className="text-center text-4xl mt-5 pt-5 pb-4">Add Yours Toy</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* register your input into the hook by invoking the "register" function */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3 ">
           <input
             placeholder="Photo URL"
             required
@@ -53,9 +54,9 @@ const Addtoy = () => {
             {...register("Category")}
             className="h-[50px] px-5 rounded-xl bg-red-300 text-violet-700 text-2xl shadow-xl"
           >
-            <option value="scienceKits">Car Toys</option>
-            <option value="engineeringKits">Ambulance Toys</option>
-            <option value="mathToys">Truck Toys</option>
+            <option value="Cartoys">Car Toys</option>
+            <option value="Trucktoys">Ambulance Toys</option>
+            <option value="Ambulancetoys">Truck Toys</option>
           </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3">
@@ -96,7 +97,7 @@ const Addtoy = () => {
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
         <div className="py-3 flex justify-center">
-          <button className="btn btn-accent " type="submit">
+          <button className="btn btn-accent mb-3" type="submit">
             Submit
           </button>
         </div>
