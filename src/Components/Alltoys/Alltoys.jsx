@@ -15,7 +15,7 @@ const Alltoys = () => {
       <div></div>
       <div className="mx-12 py-12">
         <table className="table w-full">
-          <tbody className="grid grid-cols-1 gap-5 py-3 p-3 bg bg-red-300 rounded ">
+          <tbody className="grid grid-cols-1 gap-5 py-3 p-3 bg  bg-violet-300 rounded ">
             {allData.map((carsData) => (
               <Toyscardata
                 key={carsData._id}

@@ -16,9 +16,18 @@ const Mytoys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        const remain = setCarsData.filter((cars) => cars._id !== id);
+        if (data.deletedCount > 0) {
+          alert("delete successfully");
+        }
+        const remain = carsData.filter((cars) => cars._id !== id);
         setCarsData(remain);
       });
+  };
+  const handleUpdateInfo = (id) => {
+    console.log(id);
+    <label htmlFor="my-modal-5" className="btn">
+      open modal
+    </label>;
   };
 
   return (
@@ -31,22 +40,23 @@ const Mytoys = () => {
         <div className="mx-12 py-12">
           <table className="table w-full">
             {/* head */}
-            <thead >
+            <thead>
               <tr className="flex justify-around">
                 <th>Photo</th>
                 <th>Category</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>View-Details</th>
-                </tr>
+              </tr>
             </thead>
             <tbody>
               {carsData.map((cars) => (
                 <Toyscart
-                 cars={cars}
+                  cars={cars}
                   key={cars._id}
-                //   handleUpdateInfo={handleUpdateInfo}
+                  //   handleUpdateInfo={handleUpdateInfo}
                   handleDelete={handleDelete}
+                  handleUpdateInfo={handleUpdateInfo}
                 ></Toyscart>
               ))}
             </tbody>

@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Toyscart = ({ cars, handleDelete }) => {
+const Toyscart = ({ cars, handleDelete, handleUpdateInfo }) => {
   const {
     sellerName,
     toyName,
@@ -53,6 +54,10 @@ const Toyscart = ({ cars, handleDelete }) => {
         <td className="font-semibold mr-10">{Category}</td>
         <td className="font-semibold">$: {price}</td>
         <td className="font-semibold">$: {quantity}</td>
+        <td>
+          <button onClick={()=>handleUpdateInfo(_id)} className="btn btn-success">Update</button>
+        </td>
+        
       </tr>
     </div>
   );

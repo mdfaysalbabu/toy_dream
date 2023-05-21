@@ -29,7 +29,7 @@ const Addtoy = () => {
       <h2 className="text-center text-4xl mt-5 pt-5 pb-4">Add Yours Toy</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* register your input into the hook by invoking the "register" function */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3 p-5">
           <input
             placeholder="Photo URL"
             required
@@ -43,7 +43,7 @@ const Addtoy = () => {
             className="h-[50px] px-5 rounded-xl bg-gradient-to-r from-yellow-800 bg-red-200 text-violet-700 text-2xl shadow-xl"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
           <input
             placeholder="Seller Email"
             defaultValue={user?.email}
@@ -59,7 +59,7 @@ const Addtoy = () => {
             <option value="Ambulancetoys">Truck Toys</option>
           </select>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3 p-5">
           <input
             placeholder="Seller Name"
             defaultValue={""}
@@ -73,7 +73,7 @@ const Addtoy = () => {
             className="h-[50px] px-5 rounded-xl  bg-red-200 bg-gradient-to-r from-yellow-800 text-2xl shadow-xl"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-3 p-5">
           <input
             placeholder="Rating"
             {...register("rating")}
@@ -97,7 +97,7 @@ const Addtoy = () => {
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
         <div className="py-3 flex justify-center">
-          <button className="btn btn-accent mb-3" type="submit">
+          <button className="btn bg-gradient-to-r from-pink-500 mb-3" type="submit">
             Submit
           </button>
         </div>

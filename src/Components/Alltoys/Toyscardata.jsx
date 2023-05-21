@@ -18,7 +18,7 @@ const Toyscardata = ({ carsData }) => {
   return (
     <div>
       <tr className="flex justify-between ">
-        <td className="bg bg-red-300 ">
+        <td className="bg bg-violet-300 ">
           <div className="flex items-center  ">
             <img
               src={photo}
@@ -36,16 +36,16 @@ const Toyscardata = ({ carsData }) => {
             </div>
           </div>
         </td>
-        <td className="flex items-center  bg bg-red-300  font-semibold text-2xl">
+        <td className="flex items-center  bg bg-violet-300  font-semibold text-2xl">
           <p>Price: {price}</p>
         </td>
-        <td className="flex items-center  bg bg-red-300   font-semibold text-2xl">
+        <td className="flex items-center  bg bg-violet-300 font-semibold text-2xl">
           {" "}
           <p>Quantity: {quantity}</p>
         </td>
-        <th className="flex items-center bg bg-red-300 ">
+        <th className="flex items-center bg bg-violet-300 ">
           <Link to={`/allToyDetails/${_id}`}>
-            <button className="btn btn-accent btn-success">View</button>
+            <button className="btn bg-gradient-to-r from-red-400">View Details</button>
           </Link>
         </th>
       </tr>
