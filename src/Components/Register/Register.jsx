@@ -2,8 +2,10 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../Providers/Authproviders";
 import { useForm } from 'react-hook-form';
+import usePath from "../../myHook/hook";
 
 const Register = () => {
+  usePath("Register")
   const { createUser } = useContext(authContext);
   const [error, setError] = useState("");
   const [user, setUser] = useState("");

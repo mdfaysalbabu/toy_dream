@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { authContext } from "../Providers/Authproviders";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import usePath from "../../myHook/hook";
 
 const Addtoy = () => {
+  usePath('AddToy')
   const { user } = useContext(authContext);
   const {
     register,

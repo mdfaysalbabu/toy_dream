@@ -10,6 +10,7 @@ import Alltoys from "../Components/Alltoys/Alltoys";
 import Blog from "../Components/Blog/Blog";
 import Update from "../Components/Mytoys/Update";
 import Privetroutes from "./Privetroutes";
+import UpdateDEtails from "../Components/UpdateDEtails";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +24,19 @@ const router = createBrowserRouter([
       },
       {
         path: "addtoy",
-        element: <Privetroutes><Addtoy></Addtoy></Privetroutes>,
+        element: (
+          <Privetroutes>
+            <Addtoy></Addtoy>
+          </Privetroutes>
+        ),
       },
       {
         path: "mytoys",
-        element: <Privetroutes><Mytoys></Mytoys></Privetroutes>,
+        element: (
+          <Privetroutes>
+            <Mytoys></Mytoys>
+          </Privetroutes>
+        ),
       },
       {
         path: "alltoys",
@@ -48,6 +57,12 @@ const router = createBrowserRouter([
       {
         path: "update/:id",
         element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allCars/${params.id}`),
+      },
+      {
+        path: "updateDetails/:id",
+        element: <UpdateDEtails></UpdateDEtails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allCars/${params.id}`),
       },

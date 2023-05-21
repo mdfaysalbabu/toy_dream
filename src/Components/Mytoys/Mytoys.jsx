@@ -2,29 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import { authContext } from "../Providers/Authproviders";
 import Toyscart from "./Toyscart";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
+import usePath from "../../myHook/hook";
 
 const Mytoys = () => {
+  usePath("MyToys");
   const { user } = useContext(authContext);
   const [carsData, setCarsData] = useState([]);
-  const [search, setSearch]=useState('')
 
   useEffect(() => {
     fetch(`http://localhost:5000/myCars/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCarsData(data));
   }, [user]);
- //Star Search
-    const handleSearch=()=>{
-        fetch(`http://localhost:5000/myCarsSearch/${search}`)
-        .then(res=> res.json())
-        .then(data => {
-            setCarsData(data);
-        })
-    }
 
-
-  //End Search
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/myCars/${id}`, {
       method: "DELETE",
@@ -32,7 +23,12 @@ const Mytoys = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          toast("delete successfully");
+          Swal.fire({
+            title: "Delete!",
+            text: "Do you want to continue",
+            icon: "error",
+            confirmButtonText: "Delete",
+          });
         }
         const remain = carsData.filter((cars) => cars._id !== id);
         setCarsData(remain);
@@ -41,9 +37,6 @@ const Mytoys = () => {
 
   const handleUpdateInfo = (id) => {
     console.log(id);
-    <label htmlFor="my-modal-5" className="btn">
-      open modal
-    </label>;
   };
 
   const handleAccending = () => {
@@ -62,20 +55,16 @@ const Mytoys = () => {
           <h1 className="text-3xl pt-3 text-red-500">Dream Cars Toy </h1>
           <hr />
         </div>
-        <div className="flex">
-          <input onChange={(event) => setSearch(event.target.value)}
-            type="text"
-            placeholder="Type here"
-            className="input input-bordered input-primary w-full max-w-xs"
-          />
-          <button onClick={handleSearch} className="btn btn-primary">Search</button>
+        <div className="flex items-center justify-center mt-2">
+          <div className="gap-4 flex">
+            <button onClick={handleAccending} className="btn btn-accent">
+              Accending
+            </button>
+            <button onClick={handleDccending} className="btn btn-accent">
+              Deccending
+            </button>
+          </div>
         </div>
-        <button onClick={handleAccending} className="btn btn-accent">
-          Accending
-        </button>
-        <button onClick={handleDccending} className="btn btn-accent">
-          Deccending
-        </button>
         <div className="mx-12 py-12">
           <table className="table w-full">
             <div className="grid grid-cols-7 text-xl font-semibold p-5">

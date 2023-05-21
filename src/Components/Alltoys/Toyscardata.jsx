@@ -34,10 +34,10 @@ const Toyscardata = ({ carsData }) => {
           <h2 className="font-semibold">$: {price}</h2>
         </div>
         <div>
-          <h2 className="font-semibold">$: {quantity}</h2>
+          <h2 className="font-semibold">{quantity}</h2>
         </div>
         <div>
-          <Link to={`update/${_id}`}>
+          <Link to={`/updateDetails/${_id}`}>
             <button className="btn bg-gradient-to-r from-green-400">
               View Details
             </button>

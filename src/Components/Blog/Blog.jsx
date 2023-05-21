@@ -1,6 +1,8 @@
 import React from "react";
+import usePath from "../../myHook/hook";
 
 const Blog = () => {
+    usePath('Blog')
   return (
     <div>
       <div className="bg-green-300 w-full  pb-20 mb-10 pt-10 ">

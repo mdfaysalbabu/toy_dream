@@ -1,10 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 
 const Update = () => {
+    useParams('Update')
   const singleDta = useLoaderData();
   const {_id}=singleDta
   const { register, handleSubmit, formState: { errors } } = useForm();

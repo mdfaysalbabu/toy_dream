@@ -4,9 +4,11 @@ import { authContext } from "../Providers/Authproviders";
 import "./Login.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import usePath from "../../myHook/hook";
 
 
 const Login = () => {
+  usePath('Login')
   const { login,googleLogin } = useContext(authContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");

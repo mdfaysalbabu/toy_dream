@@ -5,7 +5,7 @@ import Categoriycart from "./Categoriycart";
 
 const Categories = () => {
   const [carsData, setCrasData] = useState([]);
-  const [categorie, setCategorie] = useState("");
+  const [categorie, setCategorie] = useState("Cartoys");
   useEffect(() => {
     fetch(`http://localhost:5000/carsCard/${categorie}`)
       .then((res) => res.json())
@@ -23,7 +23,7 @@ const Categories = () => {
 
         <TabPanel>
           <h2>{carsData.length}</h2>
-          <div className="grid grid-cols-2 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto">
             {carsData.map((cars) => (
               <Categoriycart cars={cars}></Categoriycart>
             ))}
@@ -31,15 +31,19 @@ const Categories = () => {
         </TabPanel>
         <TabPanel>
           <h2>{carsData.length}</h2>
-          {carsData.map((cars) => (
-            <Categoriycart cars={cars}></Categoriycart>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto">
+            {carsData.map((cars) => (
+              <Categoriycart cars={cars}></Categoriycart>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
           <h2>{carsData.length}</h2>
-          {carsData.map((cars) => (
-            <Categoriycart cars={cars}></Categoriycart>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto">
+            {carsData.map((cars) => (
+              <Categoriycart cars={cars}></Categoriycart>
+            ))}
+          </div>
         </TabPanel>
       </Tabs>
     </div>
