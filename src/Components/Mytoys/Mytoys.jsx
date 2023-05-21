@@ -31,15 +31,14 @@ const Mytoys = () => {
         <div className="mx-12 py-12">
           <table className="table w-full">
             {/* head */}
-            <thead>
-              <tr>
-                <th className="font-semibold">CarsToy</th>
+            <thead >
+              <tr className="flex justify-around">
                 <th>Photo</th>
                 <th>Category</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>View</th>
-              </tr>
+                <th>View-Details</th>
+                </tr>
             </thead>
             <tbody>
               {carsData.map((cars) => (

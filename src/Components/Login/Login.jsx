@@ -91,7 +91,7 @@ const Login = () => {
                   <label className="label">
                     Don't have an account please
                     <Link className="text-purple-500" to="/register">
-                      register
+                     register
                     </Link>
                   </label>
                 </div>
@@ -112,7 +112,7 @@ const Login = () => {
               <ToastContainer></ToastContainer>
             </div>
           </div>
-          {/* <img className="w-96" src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=2000" alt="" /> */}
+          <img className="w-96" src="https://www.brevistay.com/images/Group9473.png" alt="" />
         </div>
       </div>
     </>

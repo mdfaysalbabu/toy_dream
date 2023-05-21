@@ -20,7 +20,7 @@ const Toyscart = ({ cars, handleDelete }) => {
         <th>
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-circle btn-sm"
+            className="btn btn-circle btn-sm bg-red-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,8 +38,8 @@ const Toyscart = ({ cars, handleDelete }) => {
             </svg>
           </button>
         </th>
-        <td>
-          <div className="flex items-center space-x-3">
+        <td className="mr-10 flex justify-between">
+          <div className="flex items-center  space-x-3">
             <div className="avatar">
               <div className=" w-24  h-24">
                 {photo && <img src={photo} className="h-24 w-24" />}
@@ -50,18 +50,9 @@ const Toyscart = ({ cars, handleDelete }) => {
             </div>
           </div>
         </td>
-        <td className="font-semibold font-serif">{Category}</td>
-        <td className="font-semibold font-serif">$: {price}</td>
-        <td className="font-semibold font-serif">$: {quantity}</td>
-        <th className=" cursor-pointer">
-          {/* <label htmlFor="my-modal-5" className="btn">open modal</label> */}
-          {/* <Link to={`/updateInvention/${_id}`}>
-            <img src={update} alt="" srcset="" width={"30px"} height={"30px"} />
-          </Link> */}
-        </th>
-        {/* <th>
-          Delete  
-        </th> */}
+        <td className="font-semibold mr-10">{Category}</td>
+        <td className="font-semibold">$: {price}</td>
+        <td className="font-semibold">$: {quantity}</td>
       </tr>
     </div>
   );

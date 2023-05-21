@@ -31,7 +31,7 @@ const Register = () => {
   return (
     <>
       <div className="hero min-h-screen bg-indigo-200 ">
-        <div className="hero-content flex-col lg:flex-row-reverse py-48">
+        <div className="hero-content flex-col lg:flex-row-reverse ">
           <div className="text-center lg:text-left"></div>
           <div className="card h-auto  w-full  max-w-sm shadow-2xl  bg-red-300">
             <h1 className="text-2xl font-bold text-center mt-2 ">
@@ -105,7 +105,7 @@ const Register = () => {
               </form>
             </div>
           </div>
-          <img className="rounded-2xl" src="https://st.depositphotos.com/18722762/51522/v/450/depositphotos_515228796-stock-illustration-online-registration-sign-login-account.jpg" alt="" />
+          <img className="rounded-2xl" src="https://cdni.iconscout.com/illustration/premium/thumb/free-registration-desk-1886554-1598085.png" alt="" />
         </div>
       </div>
     </>
