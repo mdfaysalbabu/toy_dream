@@ -7,12 +7,12 @@ const Alltoys = () => {
   const [allData, setAllData] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/carsAllData")
+    fetch("https://dream-car-toys-server.vercel.app/carsAllData")
       .then((res) => res.json())
       .then((data) => setAllData(data));
   }, []);
   const handleSearch = () => {
-    fetch(`http://localhost:5000/myCarsSearch/${search}`)
+    fetch(`https://dream-car-toys-server.vercel.app/myCarsSearch/${search}`)
       .then((res) => res.json())
       .then((data) => {
         setAllData(data);

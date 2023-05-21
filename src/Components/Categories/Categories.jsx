@@ -7,7 +7,7 @@ const Categories = () => {
   const [carsData, setCrasData] = useState([]);
   const [categorie, setCategorie] = useState("Cartoys");
   useEffect(() => {
-    fetch(`http://localhost:5000/carsCard/${categorie}`)
+    fetch(`https://dream-car-toys-server.vercel.app/carsCard/${categorie}`)
       .then((res) => res.json())
       .then((data) => setCrasData(data));
   }, [categorie]);

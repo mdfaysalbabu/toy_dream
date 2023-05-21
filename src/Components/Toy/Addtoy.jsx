@@ -15,7 +15,7 @@ const Addtoy = () => {
     
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/carsAll", {
+    fetch("https://dream-car-toys-server.vercel.app/carsAll", {
       method: "POST",
       headers: {
         "content-type": "application/json",

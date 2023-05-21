@@ -58,13 +58,17 @@ const router = createBrowserRouter([
         path: "update/:id",
         element: <Update></Update>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allCars/${params.id}`),
+          fetch(`https://dream-car-toys-server.vercel.app/allCars/${params.id}`),
       },
       {
         path: "updateDetails/:id",
-        element: <Privetroutes><UpdateDEtails></UpdateDEtails></Privetroutes>,
+        element: (
+          <Privetroutes>
+            <UpdateDEtails></UpdateDEtails>
+          </Privetroutes>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allCars/${params.id}`),
+          fetch(`https://dream-car-toys-server.vercel.app/allCars/${params.id}`),
       },
     ],
   },

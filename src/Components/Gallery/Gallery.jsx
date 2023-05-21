@@ -4,7 +4,7 @@ import Cargallery from "./Cargallery";
 const Gallery = () => {
   const [carData, setCarData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/galleryData")
+    fetch("https://dream-car-toys-server.vercel.app/galleryData")
       .then((res) => res.json())
       .then((data) => {
         setCarData(data);

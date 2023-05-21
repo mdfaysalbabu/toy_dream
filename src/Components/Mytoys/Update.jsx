@@ -10,7 +10,7 @@ const Update = () => {
   const {_id}=singleDta
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
-    fetch(`http://localhost:5000/carsAllData/${_id}`,{
+    fetch(`https://dream-car-toys-server.vercel.app/carsAllData/${_id}`,{
      method:"PUT",
      headers:{
          'content-type':'application/json'

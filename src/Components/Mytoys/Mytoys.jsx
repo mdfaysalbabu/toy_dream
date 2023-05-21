@@ -11,13 +11,13 @@ const Mytoys = () => {
   const [carsData, setCarsData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myCars/${user?.email}`)
+    fetch(`https://dream-car-toys-server.vercel.app/myCars/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCarsData(data));
   }, [user]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/myCars/${id}`, {
+    fetch(`https://dream-car-toys-server.vercel.app/myCars/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
