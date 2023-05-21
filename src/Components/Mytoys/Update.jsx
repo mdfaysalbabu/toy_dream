@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
+import Swal from 'sweetalert2'
+
 
 const Update = () => {
   const singleDta = useLoaderData();
@@ -8,7 +10,7 @@ const Update = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
     fetch(`http://localhost:5000/carsAllData/${_id}`,{
-     method:"PATCH",
+     method:"PUT",
      headers:{
          'content-type':'application/json'
      },
@@ -75,7 +77,7 @@ const Update = () => {
               <label className="input-group">
                 <input
                   className="input input-bordered w-80"
-                  {...register("description")}
+                  {...register("details")}
                   type="text"
                 />
               </label>

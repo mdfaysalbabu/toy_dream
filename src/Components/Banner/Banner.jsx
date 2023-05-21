@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import cartoys from "../../assets/cartoys.json";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Banner = () => {
+  useEffect(()=>{
+    AOS.init();
+},[])
   return (
-    <div className="bg-slate-300 bg-gradient-to-r from-violet-300 to-">
+    <div  data-aos="fade-right" className="bg-slate-300 bg-gradient-to-r from-violet-300 to-">
       <div className="my-container lg:flex  items-center justify-between lg:flex-row">
         {/* Text Content */}
         <div className="mb-10 lg:max-w-lg mx-auto lg:pr-5 lg:mb-0">
