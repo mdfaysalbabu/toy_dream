@@ -12,10 +12,10 @@ const Gallery = () => {
   }, []);
   return (
     <div>
-      <div className="text-center pb-8 ">
-        <h1 className="text-2xl  font-semibold">Cars-Toy-Gallery </h1>
+      <div className="text-center pb-8 mt-5">
+        <h1 className="text-2xl  font-semibold text-red-400">Cars-Toy-Gallery </h1>
         <p className="text-lg">
-          Dream Toys Cars is a Best Toys Cars
+          Dream Toys Cars is a Best Toys Cars.this Gallery have a many toys collection.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 px-20 mb-3">

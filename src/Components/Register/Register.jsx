@@ -94,15 +94,15 @@ const Register = () => {
                   <div>
                     <h6 className="text-purple-500">{error}</h6>
                   </div>
-                  <label className="label">
+                  <label>
                     All ready have and account  
-                     <Link className="text-purple-500" to="/login">
+                     <Link className="text-orange-600 text-xl ml-3" to="/login">
                       Login
                     </Link>
                   </label>
                 </div>
                 <div className="form-control mt-2">
-                  <button className="btn btn-primary">Login</button>
+                  <button className="btn bg-gradient-to-r from-red-600">Register</button>
                 </div>
               </form>
             </div>

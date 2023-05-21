@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Rating } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const Categoriycart = ({ cars }) => {
-  const {_id, photo, sellerName, rating, price, toyName } = cars;
+  const { _id, photo, sellerName, rating, price, toyName } = cars;
   return (
     <div className="card w-96 bg-base-200 shadow-xl ">
       <figure>
@@ -13,7 +13,7 @@ const Categoriycart = ({ cars }) => {
       <div className="card-body">
         <div>
           <h2 className="card-title">Toy Name: {toyName}</h2>
-          
+
           <div className="flex items-center gap-3">
             <span className="text-xl">Ratting:</span>
             <Rating
@@ -27,8 +27,8 @@ const Categoriycart = ({ cars }) => {
           </div>
         </div>
         <div>
-          <Link to={`details/${_id}`}>
-            <button onClick={""} className="btn btn-primary">
+          <Link to={`/updateDetails/${_id}`}>
+            <button className="btn bg-gradient-to-r from-green-400">
               View Details
             </button>
           </Link>

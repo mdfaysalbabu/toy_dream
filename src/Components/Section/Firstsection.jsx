@@ -20,6 +20,7 @@ const Firstsection = () => {
           </div>
         </div>
       </div> */}
+      <h2 className="text-center text-3xl mt-5 text-red-400 mb-5">Our Great Dream Car Toys </h2>
       <div className="carousel w-full h-[600px] ">
         <div id="slide1" className="carousel-item relative w-full">
           <img
