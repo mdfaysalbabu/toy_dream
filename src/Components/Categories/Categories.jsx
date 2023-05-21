@@ -16,9 +16,9 @@ const Categories = () => {
     <div className="text-center mt-5 px-10">
       <Tabs>
         <TabList>
-          <Tab onClick={() => setCategorie("Cartoys")}>Car-Toys</Tab>
-          <Tab onClick={() => setCategorie("Trucktoys")}>SuperCar-Toys</Tab>
-          <Tab onClick={() => setCategorie("Bustoys")}>Truck-Toys</Tab>
+          <Tab onClick={() => setCategorie("Sportcar")}>Sports-Car-Toys</Tab>
+          <Tab onClick={() => setCategorie("Trucktoys")}>Trucks-Toys</Tab>
+          <Tab onClick={() => setCategorie("Bustoys")}>Bus-Toys</Tab>
         </TabList>
 
         <TabPanel>

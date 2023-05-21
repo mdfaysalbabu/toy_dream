@@ -56,9 +56,9 @@ const Addtoy = () => {
             {...register("Category")}
             className="h-[50px] px-5 rounded-xl  bg-red-200 bg-gradient-to-r from-yellow-800 text-2xl shadow-xl"
           >
-            <option value="Cartoys">Car Toys</option>
-            <option value="Trucktoys">Ambulance Toys</option>
-            <option value="Bustoys">Truck Toys</option>
+            <option value="Sportcar">Sports-Car-Toy</option>
+            <option value="Trucktoys">Trucks-Toys</option>
+            <option value="Bustoys">Bus-Toys</option>
           </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3 p-5">

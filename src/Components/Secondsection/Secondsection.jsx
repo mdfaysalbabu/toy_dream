@@ -3,6 +3,7 @@ import React from "react";
 const Secondsection = () => {
   return (
     <div>
+        <h2 className="text-center text-3xl mt-4 text-red-300">Toys-Introduction</h2>
       <div className=" py-12 bg bg-base-100 mb-5 px-5 md:w-[1000px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-center">
           <div className="mx-auto w-[300px] h-[350px]  px-6 shadow-lg rounded-lg">

@@ -21,7 +21,7 @@ const Toyscart = ({ cars, handleDelete, handleUpdateInfo }) => {
       <div className="grid grid-cols-7 mt-5 items-center p-5">
         <div>{photo && <img  src={photo} className="h-24 w-24 rounded-xl" />}</div>
         <div>
-            <h2 className='font-bold'>{toyName}</h2>
+            <h2 className="font-semibold">{toyName}</h2>
         </div>
         <div>
             <h2 className="font-semibold">$: {price}</h2>
