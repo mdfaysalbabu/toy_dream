@@ -66,9 +66,11 @@ const Header = () => {
               </Link>
             </li>
             <li tabIndex={0}>
-              <Link to="mytoys">
-                <li>My Toys</li>
-              </Link>
+             {user &&
+             
+             <Link to="mytoys">
+             <li>My Toys</li>
+           </Link>}
             </li>
             <li>
               <Link to="alltoys">
@@ -76,9 +78,12 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="addtoy">
+              {
+                user &&
+                <Link to="addtoy">
                 <a>Add A Toy</a>
               </Link>
+              }
             </li>
             <li>
               <Link to="blog">

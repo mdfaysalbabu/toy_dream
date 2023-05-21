@@ -9,6 +9,7 @@ import Mytoys from "../Components/Mytoys/Mytoys";
 import Alltoys from "../Components/Alltoys/Alltoys";
 import Blog from "../Components/Blog/Blog";
 import Update from "../Components/Mytoys/Update";
+import Privetroutes from "./Privetroutes";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "addtoy",
-        element: <Addtoy></Addtoy>,
+        element: <Privetroutes><Addtoy></Addtoy></Privetroutes>,
       },
       {
         path: "mytoys",
-        element: <Mytoys></Mytoys>,
+        element: <Privetroutes><Mytoys></Mytoys></Privetroutes>,
       },
       {
         path: "alltoys",
@@ -45,13 +46,12 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path:"update/:id",
-        element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:5000/allCars/${params.id}`)
-      }
+        path: "update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allCars/${params.id}`),
+      },
     ],
   },
-
-  
 ]);
 export default router;
