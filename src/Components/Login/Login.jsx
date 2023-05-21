@@ -90,15 +90,15 @@ const Login = () => {
                   <div>
                     <h6 className="text-purple-500">{error}</h6>
                   </div>
-                  <label className="label">
+                  <label >
                     Don't have an account please
-                    <Link className="text-purple-500" to="/register">
+                    <Link className="text-red-500 ml-3 text-xl" to="/register">
                      register
                     </Link>
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
+                  <button className="btn bg-gradient-to-r from-green-600">Login</button>
                 </div>
               </form>
               <div className=" social-button-container w-50 mt-3 ">

@@ -5,7 +5,7 @@ const Blog = () => {
     usePath('Blog')
   return (
     <div>
-      <div className="bg-green-300 w-full  pb-20 mb-10 pt-10 ">
+      <div className="bg-gradient-to-r from-violet-400 w-full  pb-20 mb-10 pt-10 ">
         <h1 className="text-center font-bold  text-orange-500 text-4xl">Question</h1>
       </div>
       <div className="mb-10 mt-10">

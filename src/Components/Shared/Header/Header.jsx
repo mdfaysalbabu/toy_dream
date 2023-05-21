@@ -37,26 +37,38 @@ const Header = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <Link to="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li tabIndex={0}>
+                {user && (
+                  <Link to="mytoys">
+                    <li>My Toys</li>
+                  </Link>
+                )}
               </li>
               <li>
-                <a>All Toys</a>
-              </li>
-              <li>
-                <a>My Toys</a>
-              </li>
-              <li>
-                <Link to="addtoy">
-                  <a>Add A Toy</a>
+                <Link to="alltoys">
+                  <a>All Toys</a>
                 </Link>
               </li>
               <li>
-                <a>Blogs</a>
+                {user && (
+                  <Link to="addtoy">
+                    <a>Add A Toy</a>
+                  </Link>
+                )}
+              </li>
+              <li>
+                <Link to="blog">
+                  <a>Blogs</a>
+                </Link>
               </li>
               <li tabIndex={0}></li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Dream Toys</a>
+          <a className="btn btn-ghost normal-case text-xl text-rose-800">Dream Toys</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -66,11 +78,11 @@ const Header = () => {
               </Link>
             </li>
             <li tabIndex={0}>
-             {user &&
-             
-             <Link to="mytoys">
-             <li>My Toys</li>
-           </Link>}
+              {user && (
+                <Link to="mytoys">
+                  <li>My Toys</li>
+                </Link>
+              )}
             </li>
             <li>
               <Link to="alltoys">
@@ -78,12 +90,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              {
-                user &&
+              {user && (
                 <Link to="addtoy">
-                <a>Add A Toy</a>
-              </Link>
-              }
+                  <a>Add A Toy</a>
+                </Link>
+              )}
             </li>
             <li>
               <Link to="blog">
@@ -104,15 +115,18 @@ const Header = () => {
                   title={user.displayName}
                 />
               </span>
-              <button className="btn bg-gradient-to-r from-red-600" onClick={handleLogOut}>
+              <button
+                className="btn bg-gradient-to-r from-red-600"
+                onClick={handleLogOut}
+              >
                 Signout
               </button>
             </>
           ) : (
-            
-             <Link to="/login"
-            >
-              <button className="btn bg-gradient-to-r from-red-600">Login</button>
+            <Link to="/login">
+              <button className="btn bg-gradient-to-r from-red-600">
+                Login
+              </button>
             </Link>
           )}
         </div>

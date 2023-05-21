@@ -57,10 +57,10 @@ const Mytoys = () => {
         </div>
         <div className="flex items-center justify-center mt-2">
           <div className="gap-4 flex">
-            <button onClick={handleAccending} className="btn btn-accent">
+            <button onClick={handleAccending} className="btn bg-gradient-to-r from-green-400">
               Accending
             </button>
-            <button onClick={handleDccending} className="btn btn-accent">
+            <button onClick={handleDccending} className="btn bg-gradient-to-r from-red-400">
               Deccending
             </button>
           </div>
