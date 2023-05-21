@@ -32,7 +32,7 @@ const Login = () => {
         form.reset();
         navigate(from, { replace: true });
         console.log(loagedUser);
-        toast.success('favorite recipe!');
+        
       })
       .catch((error) => {
         setError(error.message);

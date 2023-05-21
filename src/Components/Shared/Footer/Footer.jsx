@@ -17,7 +17,7 @@ const Footer = () => {
 
          </div>
       </div> */}
-      <footer className="footer p-10 bg-indigo-400 text-base-content">
+      <footer className="footer md:p-10 p-3 bg-indigo-400 text-base-content">
         <div className="text-white">
           <img
             className="rounded-xl w-56 shadow-2xl"

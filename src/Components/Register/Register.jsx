@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Providers/Authproviders";
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import usePath from "../../myHook/hook";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  usePath("Register")
-  const { createUser } = useContext(authContext);
+  usePath("Register");
+  const { createUser, logout } = useContext(authContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [success, setSuccess] = useState("");
   const handleRegister = (event) => {
@@ -23,11 +25,25 @@ const Register = () => {
       .then((result) => {
         const loagedUser = result.user;
         console.log(loagedUser);
-        setSuccess("successfully Register")
-        
+        setSuccess("successfully Register");
+        update(loagedUser,name,photo)
+        logout();
+        navigate("/login");
       })
       .catch((error) => {
         setError(error);
+      });
+  };
+  const update = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    })
+      .then(() => {
+
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
   return (
@@ -95,19 +111,25 @@ const Register = () => {
                     <h6 className="text-purple-500">{error}</h6>
                   </div>
                   <label>
-                    All ready have and account  
-                     <Link className="text-orange-600 text-xl ml-3" to="/login">
+                    All ready have and account
+                    <Link className="text-orange-600 text-xl ml-3" to="/login">
                       Login
                     </Link>
                   </label>
                 </div>
                 <div className="form-control mt-2">
-                  <button className="btn bg-gradient-to-r from-red-600">Register</button>
+                  <button className="btn bg-gradient-to-r from-red-600">
+                    Register
+                  </button>
                 </div>
               </form>
             </div>
           </div>
-          <img className="rounded-2xl" src="https://cdni.iconscout.com/illustration/premium/thumb/free-registration-desk-1886554-1598085.png" alt="" />
+          <img
+            className="rounded-2xl"
+            src="https://cdni.iconscout.com/illustration/premium/thumb/free-registration-desk-1886554-1598085.png"
+            alt=""
+          />
         </div>
       </div>
     </>

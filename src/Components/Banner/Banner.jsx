@@ -11,12 +11,12 @@ const Banner = () => {
     AOS.init();
 },[])
   return (
-    <div  data-aos="fade-right" className="bg-slate-300 bg-gradient-to-r from-violet-300 to-">
+    <div  data-aos="fade-right" className="bg-slate-300 bg-gradient-to-r from-violet-300 px-3 md:px-0">
       <div className="my-container lg:flex  items-center justify-between lg:flex-row">
         {/* Text Content */}
-        <div className="mb-10 lg:max-w-lg mx-auto lg:pr-5 lg:mb-0">
+        <div className=" md:mb-10 lg:max-w-lg mx-auto lg:pr-5 lg:mb-0">
           <div className="max-w-xl mb-6 lg:mt-8">
-            <h2 className="text-6xl font-bold ">
+            <h2 className="md:text-6xl text-5xl font-bold ">
               Best Toy Car Have Our Dream Toy Car
             </h2>
             <p className="mt-2 text-red-950">

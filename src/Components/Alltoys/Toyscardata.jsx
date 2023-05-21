@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { authContext } from "../Providers/Authproviders";
 
 const Toyscardata = ({ carsData }) => {
+    const {user}=useContext(authContext)
+    const handleDetails=()=>{
+        if(!user)
+        {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Login first',
+                icon: 'warning',
+                confirmButtonText: 'Cool'
+              })
+        }
+    }
   const {
     _id,
     sellerName,
@@ -38,7 +52,7 @@ const Toyscardata = ({ carsData }) => {
         </div>
         <div>
           <Link to={`/updateDetails/${_id}`}>
-            <button className="btn bg-gradient-to-r from-green-400">
+            <button onClick={handleDetails} className="btn bg-gradient-to-r from-green-400">
               View Details
             </button>
           </Link>

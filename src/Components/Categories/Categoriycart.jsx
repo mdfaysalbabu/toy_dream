@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { authContext } from "../Providers/Authproviders";
+import Swal from "sweetalert2";
 
 const Categoriycart = ({ cars }) => {
   const { _id, photo, sellerName, rating, price, toyName } = cars;
+  const {user}=useContext(authContext)
+  const handleDetails=()=>{
+    if(!user)
+    {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Login first',
+            icon: 'warning',
+            confirmButtonText: 'Cool'
+          })
+    }
+}
   return (
-    <div className="card w-96 bg-base-200 shadow-xl ">
+    <div className="card w-80 bg-base-200 shadow-xl ">
       <figure>
-        <img src={photo} className="mt-4 rounded-lg w=[300px] h-[300px]" />
+        <img src={photo} className="mt-4 rounded-lg w-[200px] h-[200px]" />
       </figure>
       <div className="card-body">
         <div>
@@ -28,7 +42,7 @@ const Categoriycart = ({ cars }) => {
         </div>
         <div>
           <Link to={`/updateDetails/${_id}`}>
-            <button className="btn bg-gradient-to-r from-green-400">
+            <button onClick={handleDetails} className="btn bg-gradient-to-r from-green-400">
               View Details
             </button>
           </Link>
