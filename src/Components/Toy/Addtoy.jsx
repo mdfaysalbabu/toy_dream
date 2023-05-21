@@ -56,7 +56,7 @@ const Addtoy = () => {
           >
             <option value="Cartoys">Car Toys</option>
             <option value="Trucktoys">Ambulance Toys</option>
-            <option value="Ambulancetoys">Truck Toys</option>
+            <option value="Bustoys">Truck Toys</option>
           </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-3 p-5">
@@ -81,6 +81,7 @@ const Addtoy = () => {
           />
           <input
             placeholder="Price"
+            type="number"
             {...register("price", { required: true })}
             className="h-[50px] px-5 rounded-xl  bg-red-200 bg-gradient-to-r from-yellow-800 text-2xl shadow-xl"
           />

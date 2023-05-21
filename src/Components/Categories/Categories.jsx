@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Categoriycart from "./Categoriycart";
 
 const Categories = () => {
   const [carsData, setCrasData] = useState([]);
@@ -15,37 +16,29 @@ const Categories = () => {
     <div className="text-center mt-5 px-10">
       <Tabs>
         <TabList>
-          <Tab onClick={() => setCategorie("engineeringKits")}>Car-Toys</Tab>
-          <Tab onClick={() => setCategorie("mathToys")}>SuperCar-Toys</Tab>
-          <Tab onClick={() => setCategorie("Trucktoys")}>Truck-Toys</Tab>
+          <Tab onClick={() => setCategorie("Cartoys")}>Car-Toys</Tab>
+          <Tab onClick={() => setCategorie("Trucktoys")}>SuperCar-Toys</Tab>
+          <Tab onClick={() => setCategorie("Bustoys")}>Truck-Toys</Tab>
         </TabList>
 
         <TabPanel>
           <h2>{carsData.length}</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>{carsData.length}</h2>
+          <div className="grid grid-cols-2 mx-auto">
+            {carsData.map((cars) => (
+              <Categoriycart cars={cars}></Categoriycart>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
           <h2>{carsData.length}</h2>
           {carsData.map((cars) => (
-            <div className="card w-96 glass">
-              <figure>
-                <img
-                  src={cars.
-                    photo}
-                  alt="car!"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Life hack</h2>
-                <p>How to park your car at your garage?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Learn now!</button>
-                </div>
-              </div>
-            </div>
-            
+            <Categoriycart cars={cars}></Categoriycart>
+          ))}
+        </TabPanel>
+        <TabPanel>
+          <h2>{carsData.length}</h2>
+          {carsData.map((cars) => (
+            <Categoriycart cars={cars}></Categoriycart>
           ))}
         </TabPanel>
       </Tabs>

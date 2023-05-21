@@ -8,6 +8,7 @@ import Error from "../Components/Error/Error";
 import Mytoys from "../Components/Mytoys/Mytoys";
 import Alltoys from "../Components/Alltoys/Alltoys";
 import Blog from "../Components/Blog/Blog";
+import Update from "../Components/Mytoys/Update";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
         path: "register",
         element: <Register></Register>,
       },
+      {
+        path:"update/:id",
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5000/allCars/${params.id}`)
+      }
     ],
   },
 
